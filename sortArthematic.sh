@@ -20,7 +20,7 @@ resultArray[$loop]=${result[$loop]}
 done
 echo "array is" ${resultArray[@]}
 
-sortedArray=( $( printf "%s \n" "${resultArray[@]}" | sort -nr  ))
+sortedArray=( $( printf "%s \n" "${resultArray[@]}" | sort -n  ))
 echo "sorted array"${sortedArray[@]}
 
 
