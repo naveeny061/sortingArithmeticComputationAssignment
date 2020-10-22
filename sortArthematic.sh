@@ -1,10 +1,12 @@
 #!/bin/bash -x
 declare -A result
 declare -a resultArray
+declare -a sortedArray
 echo "Welcome To Arithmetic Computation & Sorting Program"
 read -p "enter input 1st " a
 read -p "enter input 2nd " b
 read -p "enter input 3rd " c
+# read -p "enter input 3rd " d
 result[1]=$((a+b*c))
 result[2]=$((a*b+c))
 result[3]=$( echo | awk '{print three+one/two}' one=$a two=$b three=$c )
@@ -17,3 +19,8 @@ resultArray[$loop]=${result[$loop]}
 ((loop++))
 done
 echo "array is" ${resultArray[@]}
+
+sortedArray=( $( printf "%s \n" "${resultArray[@]}" | sort -nr  ))
+echo "sorted array"${sortedArray[@]}
+
+
